@@ -21,7 +21,9 @@ public class SecurityConfig {
                 .cors(cors -> cors.disable()) // Disable CORS
                 .addFilterBefore(jwtFilter, AuthorizationFilter.class) // Add JWT Filter
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/v1/users/login", "/api/v1/users/signup").permitAll() // Public endpoints
+                        .requestMatchers("/api/v1/users/login", "/api/v1/users/signup","/api/v1/users/signup-property-owner")
+                        .permitAll() // Public endpoints
+                        .requestMatchers("/api/v1/country/addCountry").hasAnyRole("OWNER","ADMIN")
                         .anyRequest().authenticated() // Authenticate all other requests
                 )
                 .build(); // Build the security chain
