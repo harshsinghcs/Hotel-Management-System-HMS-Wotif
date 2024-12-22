@@ -1,4 +1,7 @@
 package com.hms.repository;
 
-public interface CountryRepository extends org.springframework.data.jpa.repository.JpaRepository<com.hms.entity.Country, java.lang.Long> {
-  }
+import com.hms.entity.Country;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CountryRepository extends JpaRepository<Country, Long> {
+}

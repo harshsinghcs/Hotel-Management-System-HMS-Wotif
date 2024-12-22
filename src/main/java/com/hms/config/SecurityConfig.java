@@ -1,6 +1,5 @@
-package com.hms.confi;
+package com.hms.config;
 
-import com.hms.config.JWTFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -17,21 +16,30 @@ public class SecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(
-            HttpSecurity http
-    ) throws Exception
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception
     {
         //h(cd)2
         http.csrf().disable().cors().disable();
         http.addFilterBefore(jwtFilter, AuthorizationFilter.class);
-        //haap
-        http.authorizeHttpRequests().anyRequest().permitAll();
-//       http.authorizeHttpRequests().
-//               requestMatchers("/api/v1/users/login","/api/v1/users/signup","/api/v1/users/signup-property-owner")
-//               .permitAll()
-//               .requestMatchers("/api/v1/country/addCountry").hasAnyRole("OWNER","ADMIN")
-//               .anyRequest().authenticated();
-        return http.build();
+        // Configure authorization rules
+//        http.authorizeHttpRequests()
+//                // Allow access to login, signup, and message endpoints
+//                .requestMatchers("/api/v1/users/login", "/api/v1/users/signup", "/api/v1/users/signup-property-owner", "/message","/api/v1/properties/search-hotels")
+//                .permitAll()
+//
+//                // Allow access to /search-hotels without any authentication or role
+//
+//
+//                // Restrict access to /api/v1/countries/addCountry to users with ROLE_OWNER or ROLE_ADMIN
+//                .requestMatchers("/api/v1/countries/addCountry")
+//                .hasAnyRole("OWNER", "ADMIN")
+//
+//                // Require authentication for any other endpoint
+//                .anyRequest()
+//                .authenticated();
 
+        http.authorizeHttpRequests(auth-> auth.anyRequest().permitAll());
+
+        return http.build();
     }
 }

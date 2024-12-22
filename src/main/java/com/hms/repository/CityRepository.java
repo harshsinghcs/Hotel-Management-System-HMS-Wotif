@@ -1,4 +1,8 @@
 package com.hms.repository;
 
-public interface CityRepository extends org.springframework.data.jpa.repository.JpaRepository<com.hms.entity.City, java.lang.Long> {
-  }
+import com.hms.entity.City;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CityRepository extends JpaRepository<City, Long> {
+
+}
