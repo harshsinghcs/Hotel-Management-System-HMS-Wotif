@@ -23,71 +23,70 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping("/signup-property-owner")
-    public ResponseEntity<?> createPropertyOwnerUser(
-            @RequestBody AppUser user
-    ){
-        Optional<AppUser> opUsername = appUserRepository.findByUsername(user.getUsername());
-        if(opUsername.isPresent()){
-            return new ResponseEntity<>("username already taken", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-
-        Optional<AppUser> opEmail = appUserRepository.findByUsername(user.getEmail());
-        if(opEmail.isPresent()){
-            return new ResponseEntity<>("email already taken", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-
-        String encryptedPassword = BCrypt.hashpw(user.getPassword(),BCrypt.gensalt(5));
-        user.setPassword(encryptedPassword);
-        user.setRole("ROLE_OWNER");
-        AppUser savedUser = appUserRepository.save(user);
-        return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
-
-    }
-
     @GetMapping("/message")
-    public String getMessage(){
+    public String getMessage() {
         return "hello";
-    }
-
-    @PostMapping("/login")
-    public ResponseEntity<?> login(
-            @RequestBody LoginDto dto
-    ){
-        String token = userService.verifyLogin(dto);
-        if(token!=null) {
-            TokenDto tokenDto = new TokenDto();
-            tokenDto.setToken(token);
-            tokenDto.setType("JWT");
-            return new ResponseEntity<>(tokenDto, HttpStatus.OK);
-        }else {
-            return new ResponseEntity<>("Invalid username/password", HttpStatus.FORBIDDEN);
-        }
     }
 
     @PostMapping("/signup")
     public ResponseEntity<?> createUser(
             @RequestBody AppUser user
-    ){
+    ) {
         Optional<AppUser> opUsername = appUserRepository.findByUsername(user.getUsername());
-        if(opUsername.isPresent()){
+        if (opUsername.isPresent()) {
             return new ResponseEntity<>("username already taken", HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
         Optional<AppUser> opEmail = appUserRepository.findByUsername(user.getEmail());
-        if(opEmail.isPresent()){
+        if (opEmail.isPresent()) {
             return new ResponseEntity<>("email already taken", HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
-        String encryptedPassword = BCrypt.hashpw(user.getPassword(),BCrypt.gensalt(5));
+        String encryptedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt(5));
         user.setPassword(encryptedPassword);
         user.setRole("ROLE_USER");
         AppUser savedUser = appUserRepository.save(user);
         return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
 
     }
+
+    @PostMapping("/signup-property-owner")
+    public ResponseEntity<?> createPropertyOwnerUser(
+            @RequestBody AppUser user
+    ) {
+        Optional<AppUser> opUsername = appUserRepository.findByUsername(user.getUsername());
+        if (opUsername.isPresent()) {
+            return new ResponseEntity<>("username already taken", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+        Optional<AppUser> opEmail = appUserRepository.findByUsername(user.getEmail());
+        if (opEmail.isPresent()) {
+            return new ResponseEntity<>("email already taken", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+        String encryptedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt(5));
+        user.setPassword(encryptedPassword);
+        user.setRole("ROLE_OWNER");
+        AppUser savedUser = appUserRepository.save(user);
+        return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(
+            @RequestBody LoginDto dto
+    ) {
+        String token = userService.verifyLogin(dto);
+        if (token != null) {
+            TokenDto tokenDto = new TokenDto();
+            tokenDto.setToken(token);
+            tokenDto.setType("JWT");
+            return new ResponseEntity<>(tokenDto, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Invalid username/password", HttpStatus.FORBIDDEN);
+        }
+    }
+
 }
-// today tasks
-//controller crud for city
+// today tasks - done
 // add transactional
 // E2E dev now

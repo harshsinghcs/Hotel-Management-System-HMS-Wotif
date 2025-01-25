@@ -17,6 +17,4 @@ public class Country {
     @Column(name = "name", nullable = false)
     private String name;
 
-
-
 }
