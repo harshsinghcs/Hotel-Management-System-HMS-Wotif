@@ -21,6 +21,7 @@ public class SecurityConfig {
         //h(cd)2
         http.csrf().disable().cors().disable();
         http.addFilterBefore(jwtFilter, AuthorizationFilter.class);
+
         // Configure authorization rules
 //        http.authorizeHttpRequests()
 //                // Allow access to login, signup, and message endpoints

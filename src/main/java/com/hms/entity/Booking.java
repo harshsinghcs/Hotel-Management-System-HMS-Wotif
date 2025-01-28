@@ -22,6 +22,9 @@ public class Booking {
         return null;
     }
 
+    public void setStatus(String cancelled) {
+    }
+
 
     // Getters and Setters
 }

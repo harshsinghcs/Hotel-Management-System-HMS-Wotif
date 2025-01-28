@@ -2,8 +2,8 @@ package com.hms.service;
 
 import com.hms.entity.Booking;
 import com.hms.entity.Room;
-import com.hms.repository.bookingRepository;
-import com.hms.repository.roomRepository;
+import com.hms.repository.BookingRepository;
+import com.hms.repository.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +11,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class BookingService {
     @Autowired
-    private com.hms.repository.bookingRepository bookingRepository;
+    private BookingRepository bookingRepository;
     @Autowired
-    private com.hms.repository.roomRepository roomRepository;
+    private RoomRepository roomRepository;
 
     public Booking createBooking(Booking booking){
         Room room = roomRepository.findById(booking.getRoomId()).orElseThrow(()-> new RuntimeException("Room not found"));

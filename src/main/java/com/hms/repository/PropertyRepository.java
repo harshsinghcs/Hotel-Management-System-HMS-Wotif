@@ -15,4 +15,3 @@ public interface PropertyRepository extends JpaRepository<Property, Long> {
             @Param("country") String countryName
     );
 }
-//
