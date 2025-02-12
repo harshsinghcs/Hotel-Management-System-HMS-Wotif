@@ -21,7 +21,6 @@ public class JWTService {
 
     @Value("${jwt.expiry.duration}")
     private int expiryTime;
-
     private Algorithm algorithm;
 
     @PostConstruct

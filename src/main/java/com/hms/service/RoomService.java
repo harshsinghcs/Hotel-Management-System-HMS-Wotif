@@ -12,7 +12,8 @@ public class RoomService {
     @Autowired
     private RoomRepository roomRepository;
 
-    public List<Room> getAvailableRooms(){
-        return roomRepository.findByAvailableTure();
+    public List<Room> getAvailableRooms() {
+        return roomRepository.findByAvailableTrue();
     }
+
 }
