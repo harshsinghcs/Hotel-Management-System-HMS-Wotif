@@ -11,4 +11,4 @@ jwt.issuer={give your issuer name }
 jwt.expiry.duration={give duration}
 
 
-//remove demo from file name
+// remove demo from file name and give file name as application.properties
