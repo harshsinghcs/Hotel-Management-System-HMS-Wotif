@@ -1,4 +1,6 @@
-# Hotel Management System (Wotif)
+# Hotel Management System (Wotif) Clone
+
+### Note: This project is a Wotif clone created solely for learning and educational purposes Only.
 
 ## Overview
 The **Hotel Management System (Wotif)** is a robust backend application designed and developed to streamline hotel operations. Built using modern Java technologies, it focuses on performance, scalability, and security, offering modules such as OTP-based user registration, room management, feedback collection, and automated PDF invoice generation. The system is secured with Spring Security and JWT for authentication and integrates third-party APIs for email/SMS notifications.
