@@ -25,28 +25,39 @@ The **Hotel Management System (Wotif)** is a robust backend application designed
 ### Deployment
 The application is deployed on AWS, leveraging cloud scalability and reliability for production use.
 
-## Tech Stack
-- **Programming Language**: Java 8
-- **Framework**: Spring Boot
-- **Database**: MySQL
-- **ORM**: Hibernate JPA
-- **Security**: Spring Security, JWT
-- **PDF Generation**: ITEXTPDF
-- **Tools & Libraries**: Maven, Lombok, ModelMapper
-- **Cloud Provider**: AWS
+## 🚀 Tech Stack
 
-## Project Architecture
-1. **Controller Layer**: Manages HTTP requests and routes them to the appropriate services.
-2. **Service Layer**: Contains the business logic for the application.
-3. **Repository Layer**: Handles database interactions using Hibernate JPA.
-4. **Security Layer**: Configures Spring Security and JWT for authentication and authorization.
-5. **Utility Classes**: Includes tools for PDF generation, email/SMS notifications, and model mapping.
+- ![Java](https://img.shields.io/badge/Java%208-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)  
+- ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)  
+- ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)  
+- ![Hibernate](https://img.shields.io/badge/Hibernate%20JPA-59666C?style=for-the-badge&logo=hibernate&logoColor=white)  
+- ![Spring Security](https://img.shields.io/badge/Spring%20Security-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white)  
+- ![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)  
+- ![iTextPDF](https://img.shields.io/badge/iTextPDF-FF6F00?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)  
+- ![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)  
+- ![Lombok](https://img.shields.io/badge/Lombok-CA4245?style=for-the-badge&logoColor=white)  
+- ![ModelMapper](https://img.shields.io/badge/ModelMapper-007396?style=for-the-badge&logo=java&logoColor=white)  
+- ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)  
 
-## Installation and Setup
-### Prerequisites
-- Java 8
-- Maven
-- MySQL Server
+---
+
+## 🏗 Project Architecture
+
+1. **Controller Layer** → Manages HTTP requests and routes them to the appropriate services.  
+2. **Service Layer** → Contains the business logic for the application.  
+3. **Repository Layer** → Handles database interactions using Hibernate JPA.  
+4. **Security Layer** → Configures Spring Security and JWT for authentication and authorization.  
+5. **Utility Classes** → Includes tools for PDF generation, email/SMS notifications, and model mapping.  
+
+---
+
+## ⚙ Installation & Setup
+
+### ✅ Prerequisites
+- ![Java 8](https://img.shields.io/badge/Java%208-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+- ![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
+- ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+
 
 ### Steps to Run the Application
 1. Clone the repository:
